@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="KK\RabbitMQ\Api\ProductImportInterface"
+                type="KK\RabbitMQ\Model\ProductImport" />
+    <preference for="KK\RabbitMQ\Api\ProductInterface" type="KK\RabbitMQ\Model\Product" />
+
+    <type name="KK\RabbitMQ\Consumer\ProductImport">
+        <arguments>
+            <argument name="logger" xsi:type="object">KK\Log\Logger\Logger</argument>
+        </arguments>
+    </type>
+</config>
